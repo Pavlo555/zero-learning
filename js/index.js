@@ -8,6 +8,7 @@ const modalStart = document.getElementById('modalStart');
 const question = document.getElementById('question');
 const checking = document.getElementById('checking');
 const nextTest = document.getElementById('nextTest');
+let selectedVerb;
 
 const verbs = {
   be: ["was/were", "been", "być"],
@@ -56,41 +57,41 @@ startTest.onclick = function() {
   testWord();
 };
 
+checking.addEventListener('click', ()=> {
+  const answerSimplePast = document.getElementById('simplePast').value.trim().toLowerCase();
+  const answerPastParticiple = document.getElementById('pastParticiple').value.trim().toLowerCase();
+  const answerTranslate = document.getElementById('translate').value.trim().toLowerCase();
+
+  if (selectedVerb[0] == answerSimplePast) {
+    document.getElementById('simplePast').value = "Prawidlowo✅";
+  } else {
+    document.getElementById('simplePast').value = `Nie Prawidlowo❌, Prawidlowo [ ${selectedVerb[0]} ]`;
+  };
+
+  if (selectedVerb[1] == answerPastParticiple) {
+    document.getElementById('pastParticiple').value = "Prawidlowo✅";
+  } else {
+    document.getElementById('pastParticiple').value = `Nie Prawidlowo❌, Prawidlowo [ ${selectedVerb[1]} ]`;
+  };
+
+  if (selectedVerb[2] == answerTranslate) {
+    document.getElementById('translate').value = "Prawidlowo✅";
+  } else {
+    document.getElementById('translate').value = `Nie Prawidlowo❌, Prawidlowo [ ${selectedVerb[2]} ]`;
+  };
+
+  checking.style.display = "none";
+  nextTest.style.display = "flex";
+});
+
 function testWord() {
   let verbsKeys = Object.keys(verbs);
   let keyRandom = Math.floor(Math.random() * verbsKeys.length);
 
   let randomVerbKey = verbsKeys[keyRandom];
-  let selectedVerb = verbs[randomVerbKey];
+  selectedVerb = verbs[randomVerbKey];
 
   question.innerHTML = `Zapytanie: ${randomVerbKey}`;
-
-  checking.addEventListener('click', ()=> {
-    const answerSimplePast = document.getElementById('simplePast').value.trim().toLowerCase();
-    const answerPastParticiple = document.getElementById('pastParticiple').value.trim().toLowerCase();
-    const answerTranslate = document.getElementById('translate').value.trim().toLowerCase();
-
-    if (selectedVerb[0] == answerSimplePast) {
-      document.getElementById('simplePast').value = "Prawidlowo✅";
-    } else {
-      document.getElementById('simplePast').value = `Nie Prawidlowo❌, Prawidlowo [ ${selectedVerb[0]} ]`;
-    };
-
-    if (selectedVerb[1] == answerPastParticiple) {
-      document.getElementById('pastParticiple').value = "Prawidlowo✅";
-    } else {
-      document.getElementById('pastParticiple').value = `Nie Prawidlowo❌, Prawidlowo [ ${selectedVerb[1]} ]`;
-    };
-
-    if (selectedVerb[2] == answerTranslate) {
-      document.getElementById('translate').value = "Prawidlowo✅";
-    } else {
-      document.getElementById('translate').value = `Nie Prawidlowo❌, Prawidlowo [ ${selectedVerb[2]} ]`;
-    };
-
-    checking.style.display = "none";
-    nextTest.style.display = "flex";
-  });
 };
 
 nextTest.onclick = function() {
