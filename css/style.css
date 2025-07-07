@@ -1,0 +1,232 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: #1b283f; */
+    background: #232323;
+    color: #e0e0e0;
+    font-family: "Nunito", sans-serif;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    min-height: 40px;
+    max-height: 150px;
+    background: linear-gradient(to top, #1c5f5c, #1b283f);
+}
+
+header .header-left {
+    margin-left: 5%;
+}
+
+header .header-right {
+    margin: auto 0;
+    margin-right: 5%;
+    margin-left: auto;
+}
+
+header .header-right button {
+    border-radius: 8px;
+    font-size: 17px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(6, 6, 6, 0.6);
+    z-index: 99;
+}
+
+.modal .modal-content {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    background: #232323;
+    overflow-y: scroll;
+    border-radius: 8px;
+}
+
+.modal .modal-content .modal-table {
+    width: 94%;
+    margin: 10px 3%;
+}
+
+.modal .modal-content .modal-table h2 {
+    margin: 5px 0;
+}
+
+.modal .modal-content .modal-table .my-table {
+    border: 1px solid #1c5f5c;
+    border-collapse: collapse;
+    background: #202020;
+    margin: auto;
+}
+
+.modal .modal-content .btn-close {
+    float: right;
+    margin-top: 5px;
+    margin-right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* MAIN */
+
+/* Table */
+main .table-form {
+    margin: 10px 5%;
+}
+
+main .table-form .my-table {
+    border: 1px solid #1c5f5c;
+    border-collapse: collapse;
+    background: #202020;
+}
+.my-table td, .my-table th {
+    border: 1px solid #1c5f5c;
+    padding: 8px;
+}
+
+main .table-box ul {
+    margin-left: 31px;
+    font-size: 20px;
+}
+
+/* Test */
+
+main .word-form {
+    position: relative;
+    background: #1c5f5c;
+    margin: 40px 15%;
+    width: 70%;
+    border-radius: 8px;
+    font-size: 32px;
+    border-right: 4px #123b3a solid;
+    border-bottom: 4px #123b3a solid;
+}
+
+main .word-form .start-question {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    padding: 60px 0;
+    background: rgb(6, 6, 6, 0.6);
+}
+
+main .word-form .start-question button {
+    padding: 0 5px;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+main .word-form .box-form{
+    padding: 10px;
+}
+
+main .word-form .box-form form {
+    margin-top: 7px;
+}
+
+main .word-form .box-form form input[type="text"] {
+    min-width: 380px;
+    max-width: 47%;
+    font-size: 18px;
+}
+
+main .word-form .box-form form button {
+    font-size: 18px;
+    border-radius: 8px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+main .word-form .box-form form #nextTest {
+    display: none;
+}
+
+@media screen and (max-width: 749px) {
+    .modal .modal-content {
+        width: 90%;
+        height: 85%;
+        margin: auto;
+        background: #232323;
+        overflow-y: scroll;
+    }
+}
+@media screen and (max-width: 632px) {  
+    /* Modal */
+    .modal .modal-content .modal-table .modal-table-center {
+        overflow-x: scroll; 
+    }
+    /* Main */
+    main .table-form .table-box {
+        overflow-x: scroll;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    main .word-form {
+        position: relative;
+        background: #1c5f5c;
+        margin: 30px 2%;
+        width: 96%;
+        border-radius: 8px;
+        font-size: 32px;
+        border-right: 4px #123b3a solid;
+        border-bottom: 4px #123b3a solid;
+    }
+
+    main .word-form .start-question {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        padding: 85px 0;
+        background: rgb(6, 6, 6, 0.6);
+    }
+
+    main .word-form .box-form{
+        padding: 7px;
+    }
+
+    main .word-form .box-form form input[type="text"] {
+        min-width: 317px;
+        max-width: 47%;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    main .word-form .box-form form input[type="text"] {
+        min-width: 350px;
+        max-width: 47%;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 378px) {
+    main .word-form .box-form form input[type="text"] {
+        min-width: 301px;
+        max-width: 47%;
+        font-size: 14px;
+    }
+}
