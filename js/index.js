@@ -31,7 +31,18 @@ const verbs = {
   draw: ["drew", "drawn", "rysować"],
   dream: ["dreamed/dreamt", "dreamed/dreamt", "marzyć"],
   drink: ["drank", "drunk", "pić"],
-  drive: ["drove", "driven", "prowadzić"]
+  drive: ["drove", "driven", "prowadzić"],
+  eat: ["ate", "eaten", "jeść"],
+  fall: ["fell", "fallen", "spadać"],
+  feel: ["felt", "felt", "czuć"],
+  find: ["found", "found", "znaleźć"],
+  fly: ["flew", "flown", "latać"],
+  forbid: ["forbade", "forbidden", "zakazać"],
+  forget: ["forgot", "forgotten", "zapominać"],
+  forgive: ["forgave", "forgiven", "wybaczać"],
+  get: ["got", "got/gotten", "dostawać"],
+  give: ["gave", "given", "dawać"],
+  go: ["went", "gone", "iść"]
 };
 
 
