@@ -33,7 +33,12 @@ header .header-right button {
     border-radius: 8px;
     font-size: 17px;
     padding: 4px;
+    border: none;
     cursor: pointer;
+}
+
+header .header-right button:hover {
+    background: #a0a0a0;
 }
 
 /* MODAL */
@@ -141,11 +146,41 @@ main .word-form .start-question {
 main .word-form .start-question button {
     padding: 0 5px;
     font-size: 20px;
-    border-radius: 8px;
+    border-radius: 13px;
+    background: linear-gradient(to top, #268f8a, #213558);
+    background-size: 400% 400%;
+    color: #e0e0e0;
+    animation: btnStart 4s infinite, colorAnimation 2.5s infinite;
+    box-shadow: 0 0 8px #000000;
+    border: none;
     cursor: pointer;
 }
 
-main .word-form .box-form{
+@keyframes btnStart {
+    0% {
+        transform: scale(1.0);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+@keyframes colorAnimation {
+    0% {
+        background-position: 50% 100%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 50% 100%;
+    }
+}
+
+main .word-form .box-form {
     padding: 10px;
 }
 
@@ -168,6 +203,15 @@ main .word-form .box-form form button {
 
 main .word-form .box-form form #nextTest {
     display: none;
+}
+
+@media screen and (max-width: 749px) {
+    .modal .modal-content {
+        width: 90%;
+        height: 85%;
+        margin: auto;
+        background: #232323;
+    }
 }
 
 @media screen and (max-width: 632px) {  
